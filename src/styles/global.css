@@ -1,0 +1,69 @@
+@import "tailwindcss";
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin:0;
+}
+:root{
+    --font-display: "Satoshi", "sans-serif";
+
+    --color-rosy-granite-50: #f2f2f3;
+    --color-rosy-granite-100: #e4e4e7;
+    --color-rosy-granite-200: #c9c9cf;
+    --color-rosy-granite-300: #afafb6;
+    --color-rosy-granite-400: #94949e;
+    --color-rosy-granite-500: #797986;
+    --color-rosy-granite-600: #61616b;
+    --color-rosy-granite-700: #494950;
+    --color-rosy-granite-800: #303036;
+    --color-rosy-granite-900: #18181b;
+    --color-rosy-granite-950: #111113;
+
+    --color-shadow-grey-50: #f0f1f5;
+    --color-shadow-grey-100: #e0e2eb;
+    --color-shadow-grey-200: #c2c6d6;
+    --color-shadow-grey-300: #a3a9c2;
+    --color-shadow-grey-400: #858cad;
+    --color-shadow-grey-500: #666f99;
+    --color-shadow-grey-600: #52597a;
+    --color-shadow-grey-700: #3d435c;
+    --color-shadow-grey-800: #292d3d;
+    --color-shadow-grey-900: #14161f;
+    --color-shadow-grey-950: #0e1015;
+
+    --color-space-indigo-50: #eff0f6;
+    --color-space-indigo-100: #dee0ed;
+    --color-space-indigo-200: #bdc1db;
+    --color-space-indigo-300: #9ca2c9;
+    --color-space-indigo-400: #7b83b7;
+    --color-space-indigo-500: #5b64a4;
+    --color-space-indigo-600: #485084;
+    --color-space-indigo-700: #363c63;
+    --color-space-indigo-800: #242842;
+    --color-space-indigo-900: #121421;
+    --color-space-indigo-950: #0d0e17;
+
+    --color-indigo-velvet-50: #efedf8;
+    --color-indigo-velvet-100: #dfdaf1;
+    --color-indigo-velvet-200: #beb5e3;
+    --color-indigo-velvet-300: #9e90d5;
+    --color-indigo-velvet-400: #7d6bc7;
+    --color-indigo-velvet-500: #5d46b9;
+    --color-indigo-velvet-600: #4a3894;
+    --color-indigo-velvet-700: #382a6f;
+    --color-indigo-velvet-800: #251c4a;
+    --color-indigo-velvet-900: #130e25;
+    --color-indigo-velvet-950: #0d0a1a;
+
+    --color-space-indigo-50: #eeedf7;
+    --color-space-indigo-100: #dedcef;
+    --color-space-indigo-200: #bcb9df;
+    --color-space-indigo-300: #9b95d0;
+    --color-space-indigo-400: #7a72c0;
+    --color-space-indigo-500: #594fb0;
+    --color-space-indigo-600: #473f8d;
+    --color-space-indigo-700: #352f6a;
+    --color-space-indigo-800: #232046;
+    --color-space-indigo-900: #121023;
+    --color-space-indigo-950: #0c0b19;
+}
