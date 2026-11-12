@@ -12,9 +12,11 @@ import Footer from "../components/footer.astro";
 		<meta name="generator" content={Astro.generator} />
 		<title>{Astro.props.title}</title>
 	</head>
-	<body class="font-(family-name:--font-display)"> 
+	<body class="site-layout font-(family-name:--font-display) bg-rosy-granite-950">
 		<Navbar></Navbar>
-		<slot></slot>
+		<main>
+			<slot></slot>
+		</main>
 		<Footer></Footer>
 	</body>
 </html>

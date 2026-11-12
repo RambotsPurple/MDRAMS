@@ -1,22 +1,53 @@
-<!-- nav -->
-<header class="sticky top-0 z-20 w-full border-b border-hairline bg-paper/80 backdrop-blur-md">
-    <div class="grid grid-cols-4 min-h-16 items-center justify-items-center justify-center px-4  md:grid-cols-6 md:px-6">
-        <a href="#" class="col-start-1 justify-self-start">
-            <img
-            src="mstile-70x70.png"
-            alt="Home"
-            />
+<header class="site-header" data-mobile-nav>
+    <div class="nav-shell">
+        <a class="brand" href="/" aria-label="MDRAMS home">
+            <img src="/mstile-70x70.png" alt="MDRAMS" width="70" height="70" />
         </a>
-        <a href="#Impact" class=" col-start-3 font-mono text-lg md:col-start-4">
-            Impact
-        </a>
-        
-        <a href="#projects" class=" col-start-3 font-mono text-lg md:col-start-5">
-            About
-        </a>
-
-        <a href="#contact" class=" font-mono text-lg">
-             Sponsor us!
-        </a>
+        <button class="menu-toggle" type="button" aria-expanded="true" aria-controls="primary-navigation" hidden>
+            Menu <span class="menu-icon" aria-hidden="true"></span>
+        </button>
+        <nav id="primary-navigation" class="nav-panel" aria-label="Main navigation">
+            <div class="nav-inner">
+                <div class="nav-links">
+                    <a href="/#Impact">Impact</a>
+                    <a href="/#projects">About</a>
+                    <a href="/sponsor-page">Sponsor us!</a>
+                </div>
+            </div>
+        </nav>
     </div>
 </header>
+
+<script>
+    const header = document.querySelector<HTMLElement>('[data-mobile-nav]');
+    const toggle = header?.querySelector<HTMLButtonElement>('.menu-toggle');
+    const panel = header?.querySelector<HTMLElement>('.nav-panel');
+    if (header && toggle && panel) {
+        const mobile = window.matchMedia('(max-width: 767px)');
+        const setOpen = (open: boolean) => {
+            header.dataset.open = String(open);
+            toggle.setAttribute('aria-expanded', String(open));
+            panel.inert = mobile.matches && !open;
+        };
+        const syncViewport = () => {
+            if (mobile.matches && panel.contains(document.activeElement)) toggle.focus();
+            setOpen(!mobile.matches);
+        };
+        toggle.hidden = false;
+        syncViewport();
+        mobile.addEventListener('change', syncViewport);
+        toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+        panel.addEventListener('click', (event) => {
+            if (mobile.matches && event.target instanceof Element && event.target.closest('a')) {
+                toggle.focus();
+                setOpen(false);
+            }
+        });
+        header.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && mobile.matches && toggle.getAttribute('aria-expanded') === 'true') {
+                setOpen(false);
+                toggle.focus();
+            }
+        });
+    }
+</script>

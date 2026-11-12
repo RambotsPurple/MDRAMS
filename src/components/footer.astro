@@ -1,0 +1,43 @@
+---
+const {
+    email = "mdrambots@gmail.com",
+    socialLinks = [
+        { label: 'Instagram', href :"https://www.instagram.com/mdrambots/" },
+    { label: 'Github', href: "https://github.com/RambotsPurple" }
+],
+} = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer id="contact" class="site-footer">
+    <div class="footer-content">
+        <div>
+            <a class="brand" href="/">MDRAMS</a>
+            <p>More to come. Stay connected.</p>
+        </div>
+        <div>
+            <h2>Contact</h2>
+            {email ? <a href={`mailto:${email}`}>{email}</a> : <p>Contact email coming soon</p>}
+        </div>
+        <nav aria-label="Social links">
+            <h2>Follow along</h2>
+            <ul>
+                {socialLinks.map(({ label, href }:{ label: string , href: string}) => (
+                    <li>
+                        {href ? <a href={href} target="_blank">{label}</a> : <span>{label}</span>}
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; <span data-footer-year>{year}</span> MDRAMS. All rights reserved.</p>
+        <a  href="/sponsor-page" >Sponsor us</a>
+    </div>
+</footer>
+
+<script>
+    document.querySelectorAll('[data-footer-year]').forEach((element) => {
+        element.textContent = String(new Date().getFullYear());
+    });
+</script>
