@@ -1,8 +1,9 @@
 # MDRAMS - Mount doug's robotics site
 ## file structure:
-    -Components -> Parts of page
+    -Components -> Parts of a page
     -Pages -> independent sub directories like mdrams/home or mdrmas/sponsor
     -Layout -> template for pages <slot> is where pages are injected
+    -Styles -> global.css, is the global style file for all things with the import at the top
 
 ## Pages:
 
@@ -41,5 +42,4 @@
     -Tailwind
     -HTML
     -CSS
-    -Hosting on vercel
 
