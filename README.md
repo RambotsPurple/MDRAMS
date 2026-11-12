@@ -1,4 +1,8 @@
 # MDRAMS - Mount doug's robotics site
+## file structure:
+    -Components -> Parts of page
+    -Pages -> independent sub directories like mdrams/home or mdrmas/sponsor
+    -Layout -> template for pages <slot> is where pages are injected
 
 ## Pages:
 
@@ -38,3 +42,4 @@
     -HTML
     -CSS
     -Hosting on vercel
+
