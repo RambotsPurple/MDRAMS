@@ -9,12 +9,13 @@ import Footer from "../components/footer.astro";
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 		<meta name="generator" content={Astro.generator} />
 		<title>{Astro.props.title}</title>
 	</head>
 	<body class="site-layout font-(family-name:-display) bg-rosy-granite-950">
 		<Navbar></Navbar>
-		<main>
+		<main class="inline-block">
 			<slot></slot>
 		</main>
 		<Footer></Footer>

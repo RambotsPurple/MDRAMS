@@ -7,6 +7,11 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   build: {
   format: 'file'
+  
+},
+
+image: {
+   responsiveStyles:true
 },
 
   vite: {

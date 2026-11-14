@@ -1,15 +1,25 @@
 ---
 import '../styles/global.css';
-// import img from '../imgs/img.jpg' //due to change
+import { Image } from 'astro:assets';
+import hero from '../assets/media/hero.jpg';
+
 ---
-<section>
-    <div class="bg -[url(img)] bg-local">
-        <div class="wrapper-CTA pl-7">
-            <div class="header text-3xl">Robot</div>
-            <div class="info text-(--color-rosy-granite-500)">rambots</div>
-            <hr class="my-4 w-1/5 ">
-            <!-- will add a button to link to sponsors US! or smtjing -->
-            <div class="support">PLEASE PLEASE PLEASE</div>
-        </div>
+<section class="hero h-lvh overflow-hidden grid *:col-start-1 *:row-start-1">
+    <Image
+        src={hero}
+        alt="landing page img"
+        decoding="async"
+        loading="eager"
+        fetchpriority="high"
+        class="hero-image h-full w-full object-cover object-center brightness-65"
+    />
+
+    <div class="wrapper-CTA  z-10 pl-7 pt-20 text-(--color-rosy-granite-100)">
+        <div class="header text-3xl">Robot</div>
+        <div class="info text-(--color-space-indigo-300)">rambots</div>
+        <hr class="my-4 w-1/5 ">
+        <!-- will add a button to link to sponsors US! or smtjing -->
+        <div class="support">PLEASE PLEASE PLEASE</div>
     </div>
 </section>
+
